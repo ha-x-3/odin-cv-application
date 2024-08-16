@@ -17,6 +17,7 @@ export default function EducationInfo({ educationInfo, setEducationInfo  }) {
 
 	return (
 		<div className='educationInfo main'>
+            <h2>Education</h2>
 			{educationInfo.map((edu, index) => (
 				<EducationEntry
 					key={index}

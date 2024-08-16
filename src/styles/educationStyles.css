@@ -1,0 +1,8 @@
+.educationEntry {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px white solid;
+    border-radius: 6px;
+    padding: 15px 20px;
+}

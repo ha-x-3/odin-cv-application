@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/educationStyles.css';
 
 export default function EducationEntry({ education, onChange }) {
 	return (
