@@ -9,9 +9,13 @@ export default function Preview({ generalInfo, educationInfo, workInfo }) {
 			<p>Phone: {generalInfo.phoneNumber}</p>
 
 			<h2>Education</h2>
-            <p>Degree: {educationInfo.degree}</p>
-            <p>Institution: {educationInfo.institution}</p>
-            <p>Graduation Year: {educationInfo.graduationYear}</p>
+			{educationInfo.map((edu, index) => (
+				<div key={index}>
+					<p>Degree: {edu.degree}</p>
+					<p>Institution: {edu.institution}</p>
+					<p>Graduation Year: {edu.graduationYear}</p>
+				</div>
+			))}
 		</div>
 	);
 }

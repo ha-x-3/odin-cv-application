@@ -11,11 +11,13 @@ function App() {
 		email: '',
 		phoneNumber: '',
 	});
-	const [educationInfo, setEducationInfo] = useState({
-		degree: '',
-        institution: '',
-        graduationYear: 0,
-	});
+	const [educationInfo, setEducationInfo] = useState([
+		{
+			degree: '',
+			institution: '',
+			graduationYear: '',
+		}
+	]);
 	const [workInfo, setWorkInfo] = useState({});
 
 	return (
