@@ -18,7 +18,15 @@ function App() {
 			graduationYear: '',
 		}
 	]);
-	const [workInfo, setWorkInfo] = useState({});
+	const [workInfo, setWorkInfo] = useState([
+		{
+			company: '',
+            position: '',
+            responsibilities: '',
+            startYear: '',
+            endYear: '',
+		}
+	]);
 
 	return (
 		<div className='app'>

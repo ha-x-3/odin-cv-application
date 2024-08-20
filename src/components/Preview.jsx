@@ -16,6 +16,17 @@ export default function Preview({ generalInfo, educationInfo, workInfo }) {
 					<p>Graduation Year: {edu.graduationYear}</p>
 				</div>
 			))}
+
+			<h2>Work Experience</h2>
+			{workInfo.map((work, index) => (
+                <div key={index}>
+				    <p>Company: {work.company}</p>
+					<p>Position: {work.position}</p>
+					<p>Responsibilities: {work.responsibilities}</p>
+					<p>Start Year: {work.startYear}</p>
+					<p>End Year: {work.endYear}</p>
+					</div>
+			))}
 		</div>
 	);
 }

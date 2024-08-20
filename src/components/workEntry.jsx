@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/workStyles.css';
 
 export default function WorkEntry({ work, onChange }) {
   return (
@@ -30,8 +31,8 @@ export default function WorkEntry({ work, onChange }) {
               value={work.responsibilities}
               onChange={(e) => onChange('responsibilities', e.target.value)}
               placeholder='Worked on various projects and technologies'
-              rows='4'
-              cols='30'
+              rows='10'
+              cols='34'
               ></textarea>
         </label>
         <label>
