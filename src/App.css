@@ -20,8 +20,6 @@
   justify-content: center;
   gap: 25px;
   padding: 30px 50px;
-  border: 1px solid white;
-  border-radius: 6px;
 }
 
 input {
