@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import '../styles/previewStyles.css';
 
-export default function Preview({ generalInfo, educationInfo, workInfo }) {
+const Preview = forwardRef(({ generalInfo, educationInfo, workInfo }, ref) => {
 	return (
-		<div className='preview'>
+		<div
+			className='preview'
+			ref={ref}
+		>
 			<div className='intro'>
-				<h1>{generalInfo.name || "Full Name"}</h1>
-				<p>{generalInfo.email || "Email"}</p>
-				<p>{generalInfo.phoneNumber || "Phone"}</p>
+				<h1>{generalInfo.name || 'Full Name'}</h1>
+				<p>{generalInfo.email || 'Email'}</p>
+				<p>{generalInfo.phoneNumber || 'Phone'}</p>
 			</div>
 
 			<h2>Education</h2>
@@ -21,14 +24,16 @@ export default function Preview({ generalInfo, educationInfo, workInfo }) {
 
 			<h2>Work Experience</h2>
 			{workInfo.map((work, index) => (
-                <div key={index}>
-				    <p>Company: {work.company}</p>
+				<div key={index}>
+					<p>Company: {work.company}</p>
 					<p>Position: {work.position}</p>
 					<p>Responsibilities: {work.responsibilities}</p>
 					<p>Start Year: {work.startYear}</p>
 					<p>End Year: {work.endYear}</p>
-					</div>
+				</div>
 			))}
 		</div>
 	);
-}
+});
+
+export default Preview;
