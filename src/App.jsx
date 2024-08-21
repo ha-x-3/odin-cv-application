@@ -21,11 +21,12 @@ function App() {
 	const [workInfo, setWorkInfo] = useState([
 		{
 			company: '',
-            position: '',
-            responsibilities: '',
-            startYear: '',
-            endYear: '',
-		}
+			position: '',
+			responsibilities: '',
+			startYear: '',
+			endYear: '',
+			isPresent: false,
+		},
 	]);
 
 	return (

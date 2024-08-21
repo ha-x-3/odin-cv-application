@@ -16,9 +16,9 @@ const Preview = forwardRef(({ generalInfo, educationInfo, workInfo }, ref) => {
 			<h2>Education</h2>
 			{educationInfo.map((edu, index) => (
 				<div key={index}>
-					<p>Degree: {edu.degree}</p>
-					<p>Institution: {edu.institution}</p>
-					<p>Graduation Year: {edu.graduationYear}</p>
+					<p>{edu.degree || 'Degree'}</p>
+					<p>{edu.institution || 'Institution'}</p>
+					<p>{edu.graduationYear || 'Graduation Year'}</p>
 				</div>
 			))}
 
