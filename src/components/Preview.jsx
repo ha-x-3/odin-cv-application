@@ -15,7 +15,7 @@ const Preview = forwardRef(({ generalInfo, educationInfo, workInfo }, ref) => {
 
 			<h2>Education</h2>
 			{educationInfo.map((edu, index) => (
-				<div key={index}>
+				<div key={index} className='entry educationRow'>
 					<p>{edu.degree || 'Degree'}</p>
 					<p>{edu.institution || 'Institution'}</p>
 					<p>{edu.graduationYear || 'Graduation Year'}</p>
@@ -24,12 +24,11 @@ const Preview = forwardRef(({ generalInfo, educationInfo, workInfo }, ref) => {
 
 			<h2>Work Experience</h2>
 			{workInfo.map((work, index) => (
-				<div key={index}>
-					<p>Company: {work.company}</p>
-					<p>Position: {work.position}</p>
-					<p>Responsibilities: {work.responsibilities}</p>
-					<p>Start Year: {work.startYear}</p>
-					<p>End Year: {work.endYear}</p>
+				<div key={index} className='entry'>
+					<p>{work.company || 'Company'}</p>
+					<p>{work.position || 'Position'}</p>
+					<p>{work.responsibilities || 'Responsibilities'}</p>
+					<p>{work.startYear || 'Start Year'} - { work.isPresent ? "Present" : "End Year" + work.endYear}</p>
 				</div>
 			))}
 		</div>

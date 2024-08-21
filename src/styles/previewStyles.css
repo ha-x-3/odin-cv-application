@@ -30,3 +30,12 @@
   height: 2px;
   background-color: #000;
 }
+
+.entry {
+    margin-bottom: 10px;
+}
+
+.educationRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

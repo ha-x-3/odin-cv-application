@@ -56,6 +56,7 @@ export default function WorkEntry({ work, onChange }) {
 					type='checkbox'
 					checked={work.isPresent}
 					onChange={handlePresentChange}
+					className='checkbox'
 				/>
 				Present
 			</label>
