@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react';
 import '../styles/previewStyles.css';
 
-const Preview = forwardRef(({ generalInfo, educationInfo, workInfo }, ref) => {
+const Preview = forwardRef(({ generalInfo, summary, educationInfo, workInfo }, ref) => {
 	return (
 		<div
 			className='preview'
@@ -12,6 +12,9 @@ const Preview = forwardRef(({ generalInfo, educationInfo, workInfo }, ref) => {
 				<p>{generalInfo.email || 'Email'}</p>
 				<p>{generalInfo.phoneNumber || 'Phone'}</p>
 			</div>
+
+			<h2>Summary</h2>
+			<p>{summary || 'Write a brief summary'}</p>
 
 			<h2>Education</h2>
 			{educationInfo.map((edu, index) => (
