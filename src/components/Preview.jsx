@@ -1,12 +1,14 @@
 import React from 'react';
+import '../styles/previewStyles.css';
 
 export default function Preview({ generalInfo, educationInfo, workInfo }) {
 	return (
 		<div className='preview'>
-			<h2>General Information</h2>
-			<p>Name: {generalInfo.name}</p>
-			<p>Email: {generalInfo.email}</p>
-			<p>Phone: {generalInfo.phoneNumber}</p>
+			<div className='intro'>
+				<h1>{generalInfo.name || "Full Name"}</h1>
+				<p>{generalInfo.email || "Email"}</p>
+				<p>{generalInfo.phoneNumber || "Phone"}</p>
+			</div>
 
 			<h2>Education</h2>
 			{educationInfo.map((edu, index) => (

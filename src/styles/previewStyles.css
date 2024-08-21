@@ -1,0 +1,32 @@
+.preview {
+    border: 1px solid white;
+    border-radius: 6px;
+    padding: 15px 20px;
+    margin: 25px auto;
+    width: 816px;
+    height: 1056px;
+    background-color: white;;
+    color: black;
+}
+
+.intro {
+    background-color: cadetblue;
+    margin: -15px -20px 0 -20px;
+    padding: 15px 25px;
+    border-radius: 6px;
+}
+
+.preview h2 {
+  position: relative;
+  margin: 10px 0;
+}
+
+.preview h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
