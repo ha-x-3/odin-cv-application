@@ -14,6 +14,16 @@ export default function EducationEntry({ education, onChange }) {
 					placeholder='Bachelor of Science'
 				/>
 			</label>
+            <label>
+                Field of Study:
+                <input
+                    type='text'
+                    name='fieldOfStudy'
+                    value={education.fieldOfStudy}
+                    onChange={(e) => onChange('fieldOfStudy', e.target.value)}
+                    placeholder='Computer Science'
+                />
+            </label>
 			<label>
 				Institution:
 				<input

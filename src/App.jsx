@@ -14,6 +14,7 @@ function App() {
 	const [educationInfo, setEducationInfo] = useState([
 		{
 			degree: '',
+			fieldOfStudy: '',
 			institution: '',
 			graduationYear: '',
 		}
