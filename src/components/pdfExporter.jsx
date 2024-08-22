@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import html2pdf from 'html2pdf.js';
 import Preview from './preview.jsx';
 
-const PdfExporter = ({ generalInfo, educationInfo, workInfo }) => {
+const PdfExporter = ({ generalInfo, summary, educationInfo, workInfo }) => {
 	const previewRef = useRef();
 
 	const handleDownload = () => {
@@ -15,6 +15,7 @@ const PdfExporter = ({ generalInfo, educationInfo, workInfo }) => {
 			<div ref={previewRef}>
 				<Preview
 					generalInfo={generalInfo}
+					summary={summary}
 					educationInfo={educationInfo}
 					workInfo={workInfo}
 				/>
