@@ -7,7 +7,16 @@ const PdfExporter = ({ generalInfo, summary, educationInfo, workInfo }) => {
 
 	const handleDownload = () => {
 		const element = previewRef.current;
-		html2pdf().from(element).save('resume.pdf');
+
+		const opt = {
+			margin: 0.1,
+			filename: 'resume.pdf',
+			image: { type: 'jpeg', quality: 0.98 },
+			html2canvas: { scale: 2, useCORS: true },
+			jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+		};
+
+		html2pdf().from(element).set(opt).save();
 	};
 
 	return (
