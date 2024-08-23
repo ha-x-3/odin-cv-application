@@ -9,6 +9,7 @@ import PdfExporter from './components/pdfExporter.jsx';
 function App() {
 	const [generalInfo, setGeneralInfo] = useState({
 		name: '',
+		title: '',
 		email: '',
 		phoneNumber: '',
 	});

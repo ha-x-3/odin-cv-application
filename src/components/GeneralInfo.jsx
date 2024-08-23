@@ -19,6 +19,16 @@ export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
 				/>
 			</label>
 			<label>
+				Title:
+				<input
+                    type='text'
+                    name='title'
+                    value={generalInfo.title}
+                    onChange={handleChange}
+					placeholder='Software Engineer'
+				/>
+			</label>
+			<label>
 				Email:
 				<input
 					type='email'
