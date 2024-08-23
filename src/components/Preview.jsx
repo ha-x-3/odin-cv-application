@@ -9,6 +9,7 @@ const Preview = forwardRef(({ generalInfo, summary, educationInfo, workInfo }, r
 		>
 			<div className='intro'>
 				<h1>{generalInfo.name || 'Full Name'}</h1>
+				<h3>{generalInfo.title || 'Title'}</h3>
 				<p>{generalInfo.email || 'Email'}</p>
 				<p>{generalInfo.phoneNumber || 'Phone'}</p>
 			</div>

@@ -12,6 +12,11 @@
     background-color: cadetblue;
     margin: -17px -21px 0 -21px;
     padding: 15px 25px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    align-items: baseline;
 }
 
 .preview h2 {
