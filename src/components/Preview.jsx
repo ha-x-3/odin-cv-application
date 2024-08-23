@@ -10,8 +10,14 @@ const Preview = forwardRef(({ generalInfo, summary, educationInfo, workInfo }, r
 			<div className='intro'>
 				<h1>{generalInfo.name || 'Full Name'}</h1>
 				<h3>{generalInfo.title || 'Title'}</h3>
-				<p>{generalInfo.email || 'Email'}</p>
-				<p>{generalInfo.phoneNumber || 'Phone'}</p>
+				<p>
+					<i class='fa-solid fa-envelope'></i>
+					{generalInfo.email || 'Email'}
+				</p>
+				<p>
+					<i class='fa-solid fa-phone'></i>
+					{generalInfo.phoneNumber || 'Phone'}
+				</p>
 			</div>
 
 			<h2>Summary</h2>
@@ -19,7 +25,10 @@ const Preview = forwardRef(({ generalInfo, summary, educationInfo, workInfo }, r
 
 			<h2>Education</h2>
 			{educationInfo.map((edu, index) => (
-				<div key={index} className='entry educationRow'>
+				<div
+					key={index}
+					className='entry educationRow'
+				>
 					<p>{edu.degree || 'Degree'}</p>
 					<p>{edu.fieldOfStudy || 'Field of Study'}</p>
 					<p>{edu.institution || 'Institution'}</p>
@@ -29,11 +38,17 @@ const Preview = forwardRef(({ generalInfo, summary, educationInfo, workInfo }, r
 
 			<h2>Work Experience</h2>
 			{workInfo.map((work, index) => (
-				<div key={index} className='entry'>
+				<div
+					key={index}
+					className='entry'
+				>
 					<p>{work.company || 'Company'}</p>
 					<p>{work.position || 'Position'}</p>
 					<p>{work.responsibilities || 'Responsibilities'}</p>
-					<p>{work.startYear || 'Start Year'} - { work.isPresent ? "Present" : "End Year" + work.endYear}</p>
+					<p>
+						{work.startYear || 'Start Year'} -{' '}
+						{work.isPresent ? 'Present' : 'End Year' + work.endYear}
+					</p>
 				</div>
 			))}
 		</div>
