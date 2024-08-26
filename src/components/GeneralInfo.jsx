@@ -29,6 +29,16 @@ export default function GeneralInfo({ generalInfo, setGeneralInfo }) {
 				/>
 			</label>
 			<label>
+				Location:
+                <input
+                    type='text'
+                    name='location'
+                    value={generalInfo.location}
+                    onChange={handleChange}
+                    placeholder='New York, NY'
+                />
+			</label>
+			<label>
 				Email:
 				<input
 					type='email'

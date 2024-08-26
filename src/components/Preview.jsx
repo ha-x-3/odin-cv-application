@@ -8,16 +8,24 @@ const Preview = forwardRef(({ generalInfo, summary, educationInfo, workInfo }, r
 			ref={ref}
 		>
 			<div className='intro'>
-				<h1>{generalInfo.name || 'Full Name'}</h1>
-				<h3>{generalInfo.title || 'Title'}</h3>
-				<p>
-					<i className='fa-solid fa-envelope'></i>
-					{generalInfo.email || 'Email'}
-				</p>
-				<p>
-					<i className='fa-solid fa-phone'></i>
-					{generalInfo.phoneNumber || 'Phone'}
-				</p>
+				<div>
+					<h1>{generalInfo.name || 'Full Name'}</h1>
+					<h3>{generalInfo.title || 'Title'}</h3>
+				</div>
+				<div className='introRight'>
+					<p>
+						<i className='fa-solid fa-map-marker-alt'></i>
+						{generalInfo.location || 'Location'}
+					</p>
+					<p>
+						<i className='fa-solid fa-envelope'></i>
+						{generalInfo.email || 'Email'}
+					</p>
+					<p>
+						<i className='fa-solid fa-phone'></i>
+						{generalInfo.phoneNumber || 'Phone'}
+					</p>
+				</div>
 			</div>
 
 			<h2>Summary</h2>
