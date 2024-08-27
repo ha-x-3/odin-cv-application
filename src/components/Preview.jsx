@@ -30,10 +30,10 @@ const Preview = forwardRef(
 						</div>
 					</div>
 
-					<h2>Summary</h2>
+					<h2 className='previewHeading'>Summary</h2>
 					<p>{summary || 'Write a brief summary'}</p>
 
-					<h2>Education</h2>
+					<h2 className='previewHeading'>Education</h2>
 					{educationInfo.map((edu, index) => (
 						<div
 							key={index}
@@ -46,7 +46,7 @@ const Preview = forwardRef(
 						</div>
 					))}
 
-					<h2>Work Experience</h2>
+					<h2 className='previewHeading'>Work Experience</h2>
 					{workInfo.map((work, index) => (
 						<div
 							key={index}

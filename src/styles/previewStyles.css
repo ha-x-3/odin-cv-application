@@ -22,13 +22,13 @@
   margin-right: 10px;
 }
 
-h2 {
+ .previewHeading {
   position: relative;
-  margin: 15mm 0 5mm;
+  margin: 5mm 0 5mm;
   page-break-after: avoid;
 }
 
-h2::after {
+ .previewHeading::after {
   content: "";
   position: absolute;
   left: 0;
