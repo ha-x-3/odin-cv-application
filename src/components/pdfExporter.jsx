@@ -9,11 +9,11 @@ const PdfExporter = ({ generalInfo, summary, educationInfo, workInfo }) => {
 		const element = previewRef.current;
 
 		const opt = {
-			margin: 0.1,
+			margin: 0,
 			filename: 'resume.pdf',
 			image: { type: 'jpeg', quality: 0.98 },
-			html2canvas: { scale: 2, useCORS: true },
-			jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+			html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
 		};
 
 		html2pdf().from(element).set(opt).save();
@@ -21,14 +21,13 @@ const PdfExporter = ({ generalInfo, summary, educationInfo, workInfo }) => {
 
 	return (
 		<div>
-			<div ref={previewRef}>
-				<Preview
-					generalInfo={generalInfo}
-					summary={summary}
-					educationInfo={educationInfo}
-					workInfo={workInfo}
-				/>
-			</div>
+			<Preview
+				ref={previewRef}
+				generalInfo={generalInfo}
+				summary={summary}
+				educationInfo={educationInfo}
+				workInfo={workInfo}
+			/>
 			<button onClick={handleDownload}>Download PDF</button>
 		</div>
 	);

@@ -1,36 +1,34 @@
-.preview {
-    border: 1px solid white;
-    padding: 15px 20px;
-    margin: 25px auto;
-    width: 816px;
-    height: 1056px;
-    background-color: white;;
-    color: black;
+.preview-container {
+  width: 210mm;  /* A4 width */
+  margin: 0 auto;
+  background-color: white;
+  color: black;
+}
+
+.preview-content {
+  padding: 5mm;  /* Typical margins for a document */
 }
 
 .intro {
-    background-color: cadetblue;
-    margin: -17px -21px 0 -21px;
-    padding: 15px 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: cadetblue;
+  margin: -5mm -5mm 0mm -5mm;  /* Negative margin to cover the padding */
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .introRight {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
-i {
-    padding-right: 4px;
-}
-
-.preview h2 {
+h2 {
   position: relative;
-  margin: 10px 0;
+  margin: 15mm 0 5mm;
+  page-break-after: avoid;
 }
 
-.preview h2::after {
+h2::after {
   content: "";
   position: absolute;
   left: 0;
@@ -41,10 +39,32 @@ i {
 }
 
 .entry {
-    margin-bottom: 10px;
+  margin-bottom: 5mm;
+  page-break-inside: avoid;
 }
 
 .educationRow {
-    display: grid;
-    grid-template-columns: 1fr 1.25fr 1.25fr 0.75fr;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1.25fr 0.75fr;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .preview-container {
+    width: 210mm;
+    height: 297mm;  /* A4 height */
+    page-break-after: always;
+  }
+
+  .preview-content {
+    height: 100%;
+  }
+
+  h2, .entry {
+    page-break-inside: avoid;
+  }
 }
