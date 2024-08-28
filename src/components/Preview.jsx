@@ -73,15 +73,15 @@ const Preview = forwardRef(
 							key={index}
 							className='entry'
 						>
-							<p>{work.company || 'Company'}</p>
 							<p>{work.position || 'Position'}</p>
-							<p>{work.responsibilities || 'Responsibilities'}</p>
+							<p>{work.company || 'Company'}</p>
 							<p>
 								{work.startYear || 'Start Year'} -{' '}
 								{work.isPresent
 									? 'Present'
 									: work.endYear || 'End Year'}
 							</p>
+							<p>{work.responsibilities || 'Responsibilities'}</p>
 						</div>
 					))}
 				</div>

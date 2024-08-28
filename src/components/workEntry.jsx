@@ -10,16 +10,6 @@ export default function WorkEntry({ work, onChange }) {
     return (
 		<div className='workEntry'>
 			<label>
-				Company:
-				<input
-					type='text'
-					name='company'
-					value={work.company}
-					onChange={(e) => onChange('company', e.target.value)}
-					placeholder='Google'
-				/>
-			</label>
-			<label>
 				Position:
 				<input
 					type='text'
@@ -27,6 +17,16 @@ export default function WorkEntry({ work, onChange }) {
 					value={work.position}
 					onChange={(e) => onChange('position', e.target.value)}
 					placeholder='Software Engineer'
+				/>
+			</label>
+			<label>
+				Company:
+				<input
+					type='text'
+					name='company'
+					value={work.company}
+					onChange={(e) => onChange('company', e.target.value)}
+					placeholder='Google'
 				/>
 			</label>
 			<label>

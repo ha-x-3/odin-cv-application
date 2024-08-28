@@ -25,8 +25,8 @@ function App() {
 	]);
 	const [workInfo, setWorkInfo] = useState([
 		{
-			company: '',
 			position: '',
+			company: '',
 			responsibilities: '',
 			startYear: '',
 			endYear: '',
