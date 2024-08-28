@@ -1,5 +1,7 @@
 .app {
   display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 
 .leftSide {
@@ -11,6 +13,11 @@
 .rightSide {
   width: 64vw;
   overflow: scroll;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .main {
@@ -19,10 +26,20 @@
   align-items: flex-start;
   justify-content: center;
   gap: 25px;
-  padding: 30px 50px;
+  padding: 20px 50px;
 }
 
 input {
   padding-left: 4px;
   margin-left: 10px;
+}
+
+button {
+  margin: 15px 42% 0 42%;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 160px;
+  background-color: cadetblue;
+  color: black;
+  border: 2px solid rgba(4, 10, 12, 0.263);
 }
