@@ -10,6 +10,13 @@
   overflow: scroll;
 }
 
+.header {
+  background-color: rgb(71, 52, 88);
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+}
+
 .rightSide {
   width: 64vw;
   overflow: scroll;

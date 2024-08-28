@@ -37,6 +37,10 @@ function App() {
 	return (
 		<div className='app'>
 			<div className='leftSide'>
+			    <div className='header'>
+                    <h1>Resume Builder</h1>
+                    <p>Create, edit, and download your PDF resume with ease.</p>
+                </div>
 				<GeneralInfo
 					generalInfo={generalInfo}
 					setGeneralInfo={setGeneralInfo}
@@ -57,6 +61,7 @@ function App() {
 			<div className='rightSide'>
 				<PdfExporter
 					generalInfo={generalInfo}
+					summary={summary}
 					educationInfo={educationInfo}
 					workInfo={workInfo}
 				/>
