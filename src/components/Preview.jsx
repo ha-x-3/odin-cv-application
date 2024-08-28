@@ -1,8 +1,29 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 import '../styles/previewStyles.css';
 
 const Preview = forwardRef(
 	({ generalInfo, summary, educationInfo, workInfo }, ref) => {
+		const [pageBreaks, setPageBreaks] = useState([]);
+
+		useEffect(() => {
+			const updatePageBreaks = () => {
+				const previewContent = ref.current;
+				if (previewContent) {
+					const contentHeight = previewContent.scrollHeight;
+					const pageHeight = 297 * 3.7795275591; // Convert 297mm to pixels (assuming 96 DPI)
+					const breaks = [];
+					for (let i = 1; i * pageHeight < contentHeight; i++) {
+						breaks.push(i * pageHeight);
+					}
+					setPageBreaks(breaks);
+				}
+			};
+
+			updatePageBreaks();
+			window.addEventListener('resize', updatePageBreaks);
+			return () => window.removeEventListener('resize', updatePageBreaks);
+		}, [ref, generalInfo, summary, educationInfo, workInfo]);
+
 		return (
 			<div
 				ref={ref}
@@ -64,6 +85,15 @@ const Preview = forwardRef(
 						</div>
 					))}
 				</div>
+				{pageBreaks.map((breakPoint, index) => (
+					<div
+						key={index}
+						className='page-break-indicator'
+						style={{ top: `${breakPoint}px` }}
+					>
+						Page {index + 2}
+					</div>
+				))}
 			</div>
 		);
 	}

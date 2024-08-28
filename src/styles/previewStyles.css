@@ -1,74 +1,92 @@
 .preview-container {
-  width: 210mm;  /* A4 width */
-  margin: 0 auto;
-  background-color: white;
-  color: black;
+	width: 210mm; /* A4 width */
+	margin: 0 auto;
+	background-color: white;
+	color: black;
+	position: relative;
 }
 
 .preview-content {
-  padding: 5mm;
+	padding: 5mm;
 }
 
 .intro {
-  background-color: cadetblue;
-  margin: -5mm -5mm 0mm -5mm;  /* Negative margin to cover the padding */
-  padding: 15px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	background-color: cadetblue;
+	margin: -5mm -5mm 0mm -5mm; /* Negative margin to cover the padding */
+	padding: 15px 25px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .introRight {
-  margin-right: 10px;
+	margin-right: 10px;
 }
 
 i {
-    padding-right: 4px;
+	padding-right: 4px;
 }
 
- .previewHeading {
-  position: relative;
-  margin: 5mm 0 5mm;
-  page-break-after: avoid;
+.previewHeading {
+	position: relative;
+	margin: 5mm 0 5mm;
+	page-break-after: avoid;
 }
 
- .previewHeading::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 2px;
-  background-color: #000;
+.previewHeading::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	width: 100%;
+	height: 2px;
+	background-color: #000;
 }
 
 .entry {
-  margin-bottom: 5mm;
-  page-break-inside: avoid;
+	margin-bottom: 5mm;
+	page-break-inside: avoid;
 }
 
 .educationRow {
-  display: grid;
-  grid-template-columns: 1fr 1.25fr 1.25fr 0.75fr;
+	display: grid;
+	grid-template-columns: 1fr 1.25fr 1.25fr 0.75fr;
+}
+
+.page-break-indicator {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	border-top: 2px dashed #ff0000;
+	color: #ff0000;
+	font-size: 12px;
+	text-align: right;
+	padding-right: 10px;
+	pointer-events: none;
 }
 
 @media print {
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .preview-container {
-    width: 210mm;
-    height: 297mm;  /* A4 height */
-    page-break-after: always;
-  }
+	body {
+		margin: 0;
+		padding: 0;
+	}
 
-  .preview-content {
-    height: 100%;
-  }
+	.preview-container {
+		width: 210mm;
+		height: 297mm; /* A4 height */
+		page-break-after: always;
+	}
 
-  h2, .entry {
-    page-break-inside: avoid;
-  }
+	.preview-content {
+		height: 100%;
+	}
+
+	h2,
+	.entry {
+		page-break-inside: avoid;
+	}
+
+	.page-break-indicator {
+		display: none; /* Hide the indicator when printing */
+	}
 }
